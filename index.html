@@ -478,14 +478,7 @@
         color:var(--muted)
       }
       .paper-table-wrap{
-        display:block;
-        width:100%;
-        max-width:100%;
-        min-width:0;
         overflow-x:auto;
-        overflow-y:hidden;
-        -webkit-overflow-scrolling:touch;
-        overscroll-behavior-x:contain;
         border:1px solid var(--line);
         border-radius:14px;
         background:#fff
@@ -646,6 +639,7 @@
           grid-template-columns:1fr
         }
         .day-agenda-venue{
+          grid-column:auto;
           text-align:left
         }
         .session-details>.session-period,.session-details>.sessions,.session-details>.paper-schedule{
@@ -832,9 +826,6 @@
       }
       .inline-detail{
         grid-column:1/-1;
-        width:100%;
-        max-width:100%;
-        min-width:0;
         margin:2px 0 0;
         border-top:1px dashed #d7e4e9;
         padding-top:10px
@@ -862,18 +853,12 @@
         content:"−"
       }
       .inline-detail .detail-body{
-        width:100%;
-        max-width:100%;
-        min-width:0;
         padding:12px 0 8px
       }
       .inline-detail .sessions{
         grid-template-columns:repeat(3,minmax(0,1fr))
       }
       .inline-detail .paper-schedule{
-        width:100%;
-        max-width:100%;
-        min-width:0;
         margin-bottom:8px
       }
       .inline-detail .session-period{
@@ -915,10 +900,28 @@
           grid-column:1
         }
         .inline-detail .sessions{
-          grid-template-columns:1fr
+          grid-template-columns:repeat(3,minmax(0,1fr))
+        }
+        .day-agenda-row.session-row{
+          min-width:0
+        }
+        .inline-detail{
+          min-width:0;
+          max-width:100%;
+          overflow-x:auto;
+          overflow-y:hidden;
+          -webkit-overflow-scrolling:touch;
+          overscroll-behavior-x:contain
+        }
+        .inline-detail .detail-body{
+          width:980px;
+          min-width:980px
         }
         .inline-detail>summary{
-          width:auto
+          position:sticky;
+          left:0;
+          z-index:2;
+          width:max-content
         }
         .day-agenda-row.session-row{
           background:#f8fcfd
@@ -1697,7 +1700,7 @@
                       <div class="slot">15:50–17:20</div>
                       <div class="room">V005</div>
                       <h4>SS-13: Evolutionary Computation and Deep Learning for Autonomous Perception and Decision-Making</h4>
-                      <div class="chair">Chair: Prof. Ao Guo</div>
+                      <div class="chair">Chair: Prof. Jia Guo</div>
                       <div class="paper-block"><span class="paper-label">Paper ID</span>
                         <div class="paper-ids"><span><b>1119</b><small>15:50–16:05</small></span><span><b>1148</b><small>16:05–16:20</small></span><span><b>1186</b><small>16:20–16:35</small></span><span><b>1226</b><small>16:35–16:50</small></span><span>1288</span></div>
                       </div>
