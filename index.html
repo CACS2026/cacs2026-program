@@ -1152,6 +1152,65 @@
           opacity:.7
         }
       }
+      /* Detailed Program at a Glance for the two main conference days */
+      .glance-card.glance-card-detailed{
+        align-items:start
+      }
+      .glance-card-detailed .glance-date{
+        padding-top:3px
+      }
+      .glance-card-detailed .glance-program{
+        grid-column:2/-1;
+        min-width:0
+      }
+      .glance-program-row{
+        display:grid;
+        grid-template-columns:118px minmax(0,1fr) minmax(190px,280px);
+        gap:16px;
+        align-items:start;
+        padding:9px 0;
+        border-bottom:1px solid var(--line)
+      }
+      .glance-program-row:first-child{
+        padding-top:0
+      }
+      .glance-program-time{
+        color:#1768b3;
+        font-weight:850;
+        font-variant-numeric:tabular-nums;
+        white-space:nowrap
+      }
+      .glance-program-topic{
+        color:#263945;
+        font-weight:750
+      }
+      .glance-program-topic small{
+        display:block;
+        margin-top:2px;
+        color:var(--muted);
+        font-weight:600
+      }
+      .glance-program-venue{
+        color:#60717c;
+        font-size:13px
+      }
+      .glance-program-link{
+        display:inline-block;
+        margin-top:14px
+      }
+      @media(max-width:620px){
+        .glance-card-detailed .glance-program{
+          grid-column:1
+        }
+        .glance-program-row{
+          grid-template-columns:92px minmax(0,1fr);
+          gap:8px 10px;
+          padding:10px 0
+        }
+        .glance-program-venue{
+          grid-column:2
+        }
+      }
     </style>
   </head>
   <body>
@@ -1180,27 +1239,47 @@
               <div class="glance-main">15:00–17:00 · Registration<small>Conference check-in opens</small><br/><a href="#oct21">View full program →</a></div>
               <div class="glance-venue">Virtuosi Hall Conference Lobby（共善樓）</div>
             </article>
-            <article class="glance-card" id="g22">
+            <article class="glance-card glance-card-detailed" id="g22">
               <div class="glance-date">
                 <div class="dow">Thursday</div>
                 <h3>October 22, 2026</h3>
               </div>
-              <div class="glance-main">08:00–20:00 · Main Conference Day 1<small>Technical sessions · Opening · Keynotes I–II · Welcome Reception</small>
-                <div class="nstc-poster"><span class="nstc-badge">國科會控制學門成果報告 · Poster Session 1–4</span></div>
-                <br/><a href="#oct22">View full program →</a>
+              <div class="glance-main glance-program">
+                <div class="glance-program-row"><div class="glance-program-time">08:00–17:00</div><div class="glance-program-topic">Registration &amp; Exhibition</div><div class="glance-program-venue">Virtuosi Hall Conference Lobby (共善樓)</div></div>
+                <div class="glance-program-row"><div class="glance-program-time">09:00–10:30</div><div class="glance-program-topic">Sessions Track 1 / NSTC Poster 1</div><div class="glance-program-venue">Session Rooms (Virtuosi Hall Room V002–V009) / Conference Hall</div></div>
+                <div class="glance-program-row"><div class="glance-program-time">10:30–11:00</div><div class="glance-program-topic">Coffee &amp; Tea Break</div><div class="glance-program-venue"></div></div>
+                <div class="glance-program-row"><div class="glance-program-time">11:00–11:10</div><div class="glance-program-topic">Opening Ceremony</div><div class="glance-program-venue">Virtuosi Hall Room V001</div></div>
+                <div class="glance-program-row"><div class="glance-program-time">11:10–12:00</div><div class="glance-program-topic">Keynote Speech I<small>Prof. Yiran Chen, Duke University, USA</small></div><div class="glance-program-venue">Virtuosi Hall Room V001</div></div>
+                <div class="glance-program-row"><div class="glance-program-time">12:00–13:00</div><div class="glance-program-topic">Lunch</div><div class="glance-program-venue"></div></div>
+                <div class="glance-program-row"><div class="glance-program-time">13:10–14:00</div><div class="glance-program-topic">Keynote Speech II<small>Prof. Tsu-Chin Tsao, The University of California, Los Angeles (UCLA), USA</small></div><div class="glance-program-venue">Virtuosi Hall Room V001</div></div>
+                <div class="glance-program-row"><div class="glance-program-time">14:00–15:30</div><div class="glance-program-topic">Sessions Track 2 / NSTC Poster 2 / Best Paper 1 / Best Student Paper 1 / Sponsor Spotlight</div><div class="glance-program-venue">Session Rooms (Virtuosi Hall Room V002–V009) / Conference Hall</div></div>
+                <div class="glance-program-row"><div class="glance-program-time">15:30–15:50</div><div class="glance-program-topic">Coffee &amp; Tea Break</div><div class="glance-program-venue"></div></div>
+                <div class="glance-program-row"><div class="glance-program-time">15:50–17:20</div><div class="glance-program-topic">Sessions Track 3 / Best Paper 2 / Best Student Paper 2</div><div class="glance-program-venue">Session Rooms (Virtuosi Hall Room V002–V009)</div></div>
+                <div class="glance-program-row"><div class="glance-program-time">17:20–18:20</div><div class="glance-program-topic">Free Shuttle Bus Departure</div><div class="glance-program-venue"></div></div>
+                <div class="glance-program-row"><div class="glance-program-time">18:00–20:00</div><div class="glance-program-topic">Welcome Reception (Dinner)</div><div class="glance-program-venue">InSky Hotel (星享道9F餐廳)</div></div>
+                <a class="glance-program-link" href="#oct22">View full program →</a>
               </div>
-              <div class="glance-venue">Virtuosi Hall / InSky Hotel</div>
             </article>
-            <article class="glance-card" id="g23">
+            <article class="glance-card glance-card-detailed" id="g23">
               <div class="glance-date">
                 <div class="dow">Friday</div>
                 <h3>October 23, 2026</h3>
               </div>
-              <div class="glance-main">08:00–20:30 · Main Conference Day 2<small>Keynote III · Technical sessions · Invited Lecture · Banquet</small>
-                <div class="nstc-poster"><span class="nstc-badge">國科會控制學門成果報告 · Poster Session 5–6</span></div>
-                <br/><a href="#oct23">View full program →</a>
+              <div class="glance-main glance-program">
+                <div class="glance-program-row"><div class="glance-program-time">08:00–17:00</div><div class="glance-program-topic">Registration &amp; Exhibition</div><div class="glance-program-venue">Virtuosi Hall Conference Lobby (共善樓)</div></div>
+                <div class="glance-program-row"><div class="glance-program-time">09:00–10:00</div><div class="glance-program-topic">Keynote Speech III<small>Prof. Hai Li, Duke University, USA</small></div><div class="glance-program-venue">Virtuosi Hall Room V001</div></div>
+                <div class="glance-program-row"><div class="glance-program-time">10:00–10:30</div><div class="glance-program-topic">Coffee &amp; Tea Break</div><div class="glance-program-venue"></div></div>
+                <div class="glance-program-row"><div class="glance-program-time">10:30–12:00</div><div class="glance-program-topic">Sessions Track 4 / NSTC Poster 3</div><div class="glance-program-venue">Session Rooms (Virtuosi Hall Room V001–V009) / Conference Hall</div></div>
+                <div class="glance-program-row"><div class="glance-program-time">12:00–13:00</div><div class="glance-program-topic">Lunch</div><div class="glance-program-venue"></div></div>
+                <div class="glance-program-row"><div class="glance-program-time">13:00–14:30</div><div class="glance-program-topic">Sessions Track 5</div><div class="glance-program-venue">Session Rooms (Virtuosi Hall Room V001–V009)</div></div>
+                <div class="glance-program-row"><div class="glance-program-time">14:30–14:50</div><div class="glance-program-topic">Coffee &amp; Tea Break</div><div class="glance-program-venue"></div></div>
+                <div class="glance-program-row"><div class="glance-program-time">14:50–16:05</div><div class="glance-program-topic">Sessions Track 6</div><div class="glance-program-venue">Session Rooms (Virtuosi Hall Room V001–V009)</div></div>
+                <div class="glance-program-row"><div class="glance-program-time">16:05–16:40</div><div class="glance-program-topic">Invited Lecture (Prof. Chun-Liang Lin)</div><div class="glance-program-venue">Virtuosi Hall Room V001</div></div>
+                <div class="glance-program-row"><div class="glance-program-time">16:40–17:30</div><div class="glance-program-topic">國科會控制學門業務報告 (Prof. Chia-Feng Juang)</div><div class="glance-program-venue">Virtuosi Hall Room V001</div></div>
+                <div class="glance-program-row"><div class="glance-program-time">17:30–18:10</div><div class="glance-program-topic">Free Shuttle Bus Departure</div><div class="glance-program-venue"></div></div>
+                <div class="glance-program-row"><div class="glance-program-time">18:20–20:30</div><div class="glance-program-topic">Conference Banquet</div><div class="glance-program-venue">Truelove Garden Hotel (臻愛花園飯店第九廳)</div></div>
+                <a class="glance-program-link" href="#oct23">View full program →</a>
               </div>
-              <div class="glance-venue">Virtuosi Hall / Truelove Garden Hotel</div>
             </article>
             <article class="glance-card" id="g24">
               <div class="glance-date">
@@ -1837,7 +1916,7 @@
               </details>
             </div>
             <div class="day-agenda-row">
-              <div class="day-agenda-time">17:20–18:20</div>
+              <div class="day-agenda-time">17:20–18:00</div>
               <div>
                 <div class="day-agenda-title">Free Shuttle Bus Departure</div>
               </div>
@@ -2469,7 +2548,7 @@
               <div class="day-agenda-venue">Virtuosi Hall Room V001</div>
             </div>
             <div class="day-agenda-row">
-              <div class="day-agenda-time">17:30–18:10</div>
+              <div class="day-agenda-time">17:30–18:20</div>
               <div>
                 <div class="day-agenda-title">Free Shuttle Bus Departure</div>
               </div>
