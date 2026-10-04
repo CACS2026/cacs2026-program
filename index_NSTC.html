@@ -1,0 +1,1236 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width,initial-scale=1" name="viewport"/>
+    <title>國科會工程處控制學門114年度成果報告議程</title>
+    <style>
+      :root{
+        --ink:#18232d;
+        --muted:#687681;
+        --line:#e3e8ec;
+        --paper:#fff;
+        --soft:#f7f9fa;
+        --navy:#17324a;
+        --blue:#376d91;
+        --pale:#edf4f8;
+        --accent:#52c9e8;
+        --accent-2:#d7a7d8
+      }
+      *{box-sizing:border-box}
+      html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;text-size-adjust:100%}
+      body{
+        margin:0;
+        background:#fff;
+        color:var(--ink);
+        font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans TC","Noto Sans",Arial,sans-serif;
+        line-height:1.55
+      }
+      .wrap{width:min(1240px,calc(100% - 40px));margin:auto}
+      .hero{
+        padding:68px 0 54px;
+        border-bottom:1px solid var(--line);
+        background:linear-gradient(180deg,#f8fbfd 0,#fff 100%)
+      }
+      .eyebrow{font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--blue);font-weight:800}
+      .hero h1{
+        max-width:1050px;
+        margin:10px 0 14px;
+        color:var(--navy);
+        font-family:Georgia,"Noto Serif TC","Times New Roman",serif;
+        font-size:clamp(36px,5.5vw,68px);
+        font-weight:600;
+        line-height:1.12
+      }
+      .hero .sub{font-family:Georgia,"Noto Serif TC","Times New Roman",serif;font-size:clamp(18px,2.2vw,28px);font-style:italic;color:#425666}
+      .hero-meta{display:flex;gap:10px 26px;flex-wrap:wrap;margin-top:26px;color:var(--muted);font-size:14px}
+      .hero-meta b{color:var(--ink)}
+      .nav{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.94);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+      .nav .wrap{display:flex;gap:4px;overflow-x:auto;padding:10px 0;-webkit-overflow-scrolling:touch;scrollbar-width:thin}
+      .nav a{flex:0 0 auto;text-decoration:none;color:#53636f;padding:8px 12px;border-radius:8px;font-size:14px;font-weight:700;white-space:nowrap}
+      .nav a:hover,.nav a:focus-visible{background:var(--pale);color:var(--navy);outline:none}
+      section{padding:58px 0;scroll-margin-top:66px}
+      .overview{background:var(--soft)}
+      .section-kicker{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--blue);font-weight:800;margin-bottom:6px}
+      .section-title{font-family:Georgia,"Noto Serif TC","Times New Roman",serif;font-size:clamp(30px,4vw,46px);line-height:1.15;color:var(--navy);margin:0 0 12px;font-weight:600}
+      .intro{max-width:780px;color:var(--muted);margin:0 0 28px}
+      .summary-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+      .summary-card{
+        position:relative;
+        display:flex;
+        flex-direction:column;
+        min-width:0;
+        padding:20px;
+        overflow:hidden;
+        color:var(--ink);
+        text-decoration:none;
+        background:#fff;
+        border:1px solid var(--line);
+        border-radius:16px;
+        box-shadow:0 10px 30px rgba(25,45,60,.04)
+      }
+      .summary-card:before{content:"";position:absolute;inset:0 auto 0 0;width:4px;background:linear-gradient(180deg,var(--accent),var(--accent-2))}
+      .summary-card:hover,.summary-card:focus-visible{border-color:#b8cad6;transform:translateY(-1px);outline:none}
+      .summary-label{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--blue);font-weight:850}
+      .summary-card strong{margin:5px 0 9px;font:600 30px/1 Georgia,"Times New Roman",serif;color:var(--navy)}
+      .summary-card span:not(.summary-label){color:var(--muted);font-size:14px}
+      .poster-session{border-bottom:1px solid var(--line)}
+      .poster-session:nth-of-type(even){background:#fbfcfd}
+      .dayhero{display:flex;justify-content:space-between;align-items:end;gap:20px;margin-bottom:24px;padding-bottom:18px;border-bottom:2px solid var(--navy)}
+      .dayhero h2{font-family:Georgia,"Noto Serif TC","Times New Roman",serif;font-size:clamp(32px,4.5vw,50px);line-height:1;margin:0;color:var(--navy);font-weight:600}
+      .session-meta{display:flex;flex-direction:column;align-items:flex-end;color:var(--muted);font-size:14px}
+      .session-meta strong{color:var(--blue)}
+      .table-shell{overflow:hidden;background:#fff;border:1px solid var(--line);border-radius:16px;box-shadow:0 10px 30px rgba(25,45,60,.04)}
+      .table-scroll{width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch;overscroll-behavior-inline:contain;touch-action:pan-x pan-y}
+      .table-scroll:focus-visible{outline:3px solid rgba(55,109,145,.25);outline-offset:-3px}
+      .poster-table{width:100%;min-width:860px;border-collapse:collapse;table-layout:fixed}
+      .poster-table th{padding:13px 14px;text-align:left;background:var(--navy);color:#fff;font-size:13px;letter-spacing:.04em}
+      .poster-table th:nth-child(1){width:82px}
+      .poster-table th:nth-child(2){width:108px;text-align:center}
+      .poster-table th:nth-child(3){width:132px}
+      .poster-table td{padding:13px 14px;border-bottom:1px solid var(--line);vertical-align:top;font-size:14px;overflow-wrap:anywhere}
+      .poster-table tbody tr:last-child td{border-bottom:0}
+      .poster-table tbody tr:nth-child(even){background:#fafcfd}
+      .poster-table tbody tr:hover{background:#f2f7fa}
+      .session-code{color:var(--blue);font-weight:900}
+      .poster-order{text-align:center;font-weight:850;font-variant-numeric:tabular-nums}
+      .project-host{font-weight:750;color:#2b3d49}
+      .project-title{color:#3d4d58}
+      .footer{padding:34px 0;border-top:1px solid var(--line);color:var(--muted);font-size:13px}
+      .footer strong{color:var(--navy)}
+      @media(max-width:900px){
+        .summary-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+      }
+      @media(max-width:620px){
+        .wrap{width:min(100% - 24px,1240px)}
+        .hero{padding:44px 0 38px}
+        .hero h1{font-size:clamp(32px,10vw,46px)}
+        section{padding:44px 0}
+        .summary-grid{grid-template-columns:1fr}
+        .dayhero{align-items:flex-start;flex-direction:column}
+        .session-meta{align-items:flex-start}
+        .table-shell{overflow:visible;border:0;background:transparent;box-shadow:none}
+        .table-scroll{overflow:visible}
+        .poster-table{display:block;min-width:0}
+        .poster-table thead{display:none}
+        .poster-table tbody{display:grid;gap:10px}
+        .poster-table tr{display:block;padding:13px 14px;background:#fff!important;border:1px solid var(--line);border-radius:12px;box-shadow:0 5px 16px rgba(25,45,60,.035)}
+        .poster-table td{display:grid;grid-template-columns:82px minmax(0,1fr);gap:10px;padding:5px 0;border:0;font-size:14px;text-align:left}
+        .poster-table td:before{content:attr(data-label);color:#84919a;font-size:11px;letter-spacing:.04em;font-weight:850}
+        .poster-table .session-code,.poster-table .poster-order{display:inline-flex;align-items:center;justify-content:center;width:max-content;min-width:44px;padding:3px 8px;background:var(--pale);border-radius:6px;color:var(--navy)}
+        .poster-table .session-code:before,.poster-table .poster-order:before{display:none}
+        .poster-table .poster-order{margin-top:-31px;margin-left:54px}
+      }
+      @media print{
+        .nav{display:none}
+        .hero{padding:24px 0}
+        .summary-card{box-shadow:none}
+        section{padding:28px 0}
+        .table-shell{box-shadow:none}
+        .poster-table{min-width:0}
+        .poster-table tr{break-inside:avoid}
+      }
+    </style>
+  </head>
+  <body>
+    <header class="hero">
+      <div class="wrap">
+        <div class="eyebrow">NSTC · Department of Engineering Technologies · Control Program</div>
+        <h1>國科會工程處控制學門114年度成果報告議程</h1>
+        <div class="sub">成果海報議程 · 第七版</div>
+        <div class="hero-meta"><span><b>2026年10月22–23日</b></span><span>6 個海報場次</span><span>共 148 件成果海報</span></div>
+      </div>
+    </header>
+    <nav class="nav" aria-label="議程導覽">
+      <div class="wrap"><a href="#overview">總覽</a><a href="#p1">P1</a><a href="#p2">P2</a><a href="#p3">P3</a><a href="#p4">P4</a><a href="#p5">P5</a><a href="#p6">P6</a></div>
+    </nav>
+    <main>
+      <section class="overview" id="overview">
+        <div class="wrap">
+          <div class="section-kicker">Schedule</div>
+          <h2 class="section-title">議程總覽</h2>
+          <p class="intro">依日期與時段瀏覽六個成果海報場次；點選場次即可前往完整名單。</p>
+          <div class="summary-grid">
+          <a class="summary-card" href="#p1">
+            <span class="summary-label">Poster Session 1</span>
+            <strong>P1</strong>
+            <span>10/22/2026（四）</span>
+            <span>9:00–10:30 · 24 件海報</span>
+          </a>
+          <a class="summary-card" href="#p2">
+            <span class="summary-label">Poster Session 2</span>
+            <strong>P2</strong>
+            <span>10/22/2026（四）</span>
+            <span>9:00–10:30 · 25 件海報</span>
+          </a>
+          <a class="summary-card" href="#p3">
+            <span class="summary-label">Poster Session 3</span>
+            <strong>P3</strong>
+            <span>10/22/2026（四）</span>
+            <span>14:00–15:30 · 24 件海報</span>
+          </a>
+          <a class="summary-card" href="#p4">
+            <span class="summary-label">Poster Session 4</span>
+            <strong>P4</strong>
+            <span>10/22/2026（四）</span>
+            <span>14:00–15:30 · 25 件海報</span>
+          </a>
+          <a class="summary-card" href="#p5">
+            <span class="summary-label">Poster Session 5</span>
+            <strong>P5</strong>
+            <span>10/23/2026（五）</span>
+            <span>10:30–12:00 · 25 件海報</span>
+          </a>
+          <a class="summary-card" href="#p6">
+            <span class="summary-label">Poster Session 6</span>
+            <strong>P6</strong>
+            <span>10/23/2026（五）</span>
+            <span>10:30–12:00 · 25 件海報</span>
+          </a>
+          </div>
+        </div>
+      </section>
+      <section class="poster-session" id="p1">
+        <div class="wrap">
+          <div class="dayhero">
+            <div>
+              <div class="section-kicker">Poster Session 1</div>
+              <h2>海報場次 P1</h2>
+            </div>
+            <div class="session-meta">
+              <strong>10/22/2026（四）</strong>
+              <span>9:00–10:30 · 24 件海報</span>
+            </div>
+          </div>
+          <div class="table-shell">
+            <div class="table-scroll" tabindex="0" aria-label="Poster Session 1 議程表，可左右滑動">
+              <table class="poster-table">
+                <thead>
+                  <tr><th>場次</th><th>海報順序</th><th>計畫主持人</th><th>計畫中文名稱</th></tr>
+                </thead>
+                <tbody>
+                <tr>
+                  <td class="session-code" data-label="場次">P1</td>
+                  <td class="poster-order" data-label="海報順序">1</td>
+                  <td class="project-host" data-label="計畫主持人">莊家峯</td>
+                  <td class="project-title" data-label="計畫中文名稱">多目標模糊系統之元進化強化學習與機器人控制</td>
+                </tr>
+                <tr>
+                  <td class="session-code" data-label="場次">P1</td>
+                  <td class="poster-order" data-label="海報順序">2</td>
+                  <td class="project-host" data-label="計畫主持人">莊家峯</td>
+                  <td class="project-title" data-label="計畫中文名稱">基於影像輸入之視覺化可解釋深度模糊模型與領域自適應</td>
+                </tr>
+                <tr>
+                  <td class="session-code" data-label="場次">P1</td>
+                  <td class="poster-order" data-label="海報順序">3</td>
+                  <td class="project-host" data-label="計畫主持人">陳志成</td>
+                  <td class="project-title" data-label="計畫中文名稱">基於頻率域注意力與小波卷積融合的深度學習網絡:軸承故障診斷新方法</td>
+                </tr>
+                <tr>
+                  <td class="session-code" data-label="場次">P1</td>
+                  <td class="poster-order" data-label="海報順序">4</td>
+                  <td class="project-host" data-label="計畫主持人">白能勝</td>
+                  <td class="project-title" data-label="計畫中文名稱">融合語義SLAM及視覺關係偵測之全方位智慧輪椅系統</td>
+                </tr>
+                <tr>
+                  <td class="session-code" data-label="場次">P1</td>
+                  <td class="poster-order" data-label="海報順序">5</td>
+                  <td class="project-host" data-label="計畫主持人">蔡清池</td>
+                  <td class="project-title" data-label="計畫中文名稱">使用動態結構學習遞迴多項式模糊寬度學習神經網路之兩新型智慧自適應多變數控制器設計及其工業應用</td>
+                </tr>
+                <tr>
+                  <td class="session-code" data-label="場次">P1</td>
+                  <td class="poster-order" data-label="海報順序">6</td>
+                  <td class="project-host" data-label="計畫主持人">楊憲東</td>
+                  <td class="project-title" data-label="計畫中文名稱">中華文化三大圖騰的數學建模與代數運算(1/3)</td>
+                </tr>
+                <tr>
+                  <td class="session-code" data-label="場次">P1</td>
+                  <td class="poster-order" data-label="海報順序">7</td>
+                  <td class="project-host" data-label="計畫主持人">方俊修</td>
+                  <td class="project-title" data-label="計畫中文名稱">基於類神經網路之自適應學習演算法設計於滑模控制器、飽和函數參數與其抖動抑制</td>
+                </tr>
+                <tr>
+                  <td class="session-code" data-label="場次">P1</td>
+                  <td class="poster-order" data-label="海報順序">8</td>
+                  <td class="project-host" data-label="計畫主持人">江明理</td>
+                  <td class="project-title" data-label="計畫中文名稱">基於後備屏障函數於有界輸入異質性多代理人系統之分散式安全控制</td>
+                </tr>
+                <tr>
+                  <td class="session-code" data-label="場次">P1</td>
+                  <td class="poster-order" data-label="海報順序">9</td>
+                  <td class="project-host" data-label="計畫主持人">周永山</td>
+                  <td class="project-title" data-label="計畫中文名稱">取樣數據系統之數據驅動H-infinity控制器合成</td>
+                </tr>
+                <tr>
+                  <td class="session-code" data-label="場次">P1</td>
+                  <td class="poster-order" data-label="海報順序">10</td>
+                  <td class="project-host" data-label="計畫主持人">黃清輝</td>
+                  <td class="project-title" data-label="計畫中文名稱">類神經演算影像定位運用於定翼無人機GPS盲區飛行路徑實現</td>
+                </tr>
+                <tr>
+                  <td class="session-code" data-label="場次">P1</td>
+                  <td class="poster-order" data-label="海報順序">11</td>
+                  <td class="project-host" data-label="計畫主持人">謝劍書</td>
+                  <td class="project-title" data-label="計畫中文名稱">基於切換式未知信號估測和機器學習之安全通信系統研發</td>
+                </tr>
+                <tr>
+                  <td class="session-code" data-label="場次">P1</td>
+                  <td class="poster-order" data-label="海報順序">12</td>
+                  <td class="project-host" data-label="計畫主持人">李迪章</td>
+                  <td class="project-title" data-label="計畫中文名稱">在符號圖下多代理人系統的收斂行為及其在社會演化中的應用</td>
+                </tr>
+                <tr>
+                  <td class="session-code" data-label="場次">P1</td>
+                  <td class="poster-order" data-label="海報順序">13</td>
+                  <td class="project-host" data-label="計畫主持人">李迪章</td>
+                  <td class="project-title" data-label="計畫中文名稱">非線性多代理人系統的一致性控制</td>
+                </tr>
+                <tr>
+                  <td class="session-code" data-label="場次">P1</td>
+                  <td class="poster-order" data-label="海報順序">14</td>
+                  <td class="project-host" data-label="計畫主持人">張浚林</td>
+                  <td class="project-title" data-label="計畫中文名稱">改良式未知輸入觀測器設計</td>
+                </tr>
+                <tr>
+                  <td class="session-code" data-label="場次">P1</td>
+                  <td class="poster-order" data-label="海報順序">15</td>
+                  <td class="project-host" data-label="計畫主持人">顏錦柱</td>
+                  <td class="project-title" data-label="計畫中文名稱">基於類滑動模式控制的分數階混沌系統漣波混沌抑制與同步應用：含輸入非線性與非匹配擾動</td>
+                </tr>
+                <tr>
+                  <td class="session-code" data-label="場次">P1</td>
+                  <td class="poster-order" data-label="海報順序">16</td>
+                  <td class="project-host" data-label="計畫主持人">簡江儒</td>
+                  <td class="project-title" data-label="計畫中文名稱">從收斂性、強健性及實作性對PD型反覆學習控制器的新探討</td>
+                </tr>
+                <tr>
+                  <td class="session-code" data-label="場次">P1</td>
+                  <td class="poster-order" data-label="海報順序">17</td>
+                  <td class="project-host" data-label="計畫主持人">莫薩利</td>
+                  <td class="project-title" data-label="計畫中文名稱">基於彈性事件觸發強化學習的多無人機四旋翼適應控制，用於在網路攻擊和外部干擾下的避障</td>
+                </tr>
+                <tr>
+                  <td class="session-code" data-label="場次">P1</td>
+                  <td class="poster-order" data-label="海報順序">18</td>
+                  <td class="project-host" data-label="計畫主持人">吳建鋒</td>
+                  <td class="project-title" data-label="計畫中文名稱">離散時間線性隨機平均場系統的多目標輸出回授控制</td>
+                </tr>
+                <tr>
+                  <td class="session-code" data-label="場次">P1</td>
+                  <td class="poster-order" data-label="海報順序">19</td>
+                  <td class="project-host" data-label="計畫主持人">洪士程</td>
+                  <td class="project-title" data-label="計畫中文名稱">模擬啟發式方法求解可重構製造系統之最佳生產規劃</td>
+                </tr>
+                <tr>
+                  <td class="session-code" data-label="場次">P1</td>
+                  <td class="poster-order" data-label="海報順序">20</td>
+                  <td class="project-host" data-label="計畫主持人">古忠傑</td>
+                  <td class="project-title" data-label="計畫中文名稱">多項式參數相依Takagi-Sugeno模糊模型之新穎模糊控制器設計技術</td>
+                </tr>
+                <tr>
+                  <td class="session-code" data-label="場次">P1</td>
+                  <td class="poster-order" data-label="海報順序">21</td>
+                  <td class="project-host" data-label="計畫主持人">連長華</td>
+                  <td class="project-title" data-label="計畫中文名稱">不確定切換時間延遲系統動態事件觸發及自我觸發控制設計法則之研究</td>
+                </tr>
+                <tr>
+                  <td class="session-code" data-label="場次">P1</td>
+                  <td class="poster-order" data-label="海報順序">22</td>
+                  <td class="project-host" data-label="計畫主持人">陳智強</td>
+                  <td class="project-title" data-label="計畫中文名稱">受時變輸出約束之p-正規型非線性系統狀態/輸出回授漸進/有限時間穩定化控制器設計</td>
+                </tr>
+                <tr>
+                  <td class="session-code" data-label="場次">P1</td>
+                  <td class="poster-order" data-label="海報順序">23</td>
+                  <td class="project-host" data-label="計畫主持人">高崇堯</td>
+                  <td class="project-title" data-label="計畫中文名稱">強韌不穩定半徑與強穩定性之探討</td>
+                </tr>
+                <tr>
+                  <td class="session-code" data-label="場次">P1</td>
+                  <td class="poster-order" data-label="海報順序">24</td>
+                  <td class="project-host" data-label="計畫主持人">康斯証</td>
+                  <td class="project-title" data-label="計畫中文名稱">負虛系統控制理論及其在複雜柔性結構中的應用</td>
+                </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="poster-session" id="p2">
+        <div class="wrap">
+          <div class="dayhero">
+            <div>
+              <div class="section-kicker">Poster Session 2</div>
+              <h2>海報場次 P2</h2>
+            </div>
+            <div class="session-meta">
+              <strong>10/22/2026（四）</strong>
+              <span>9:00–10:30 · 25 件海報</span>
+            </div>
+          </div>
+          <div class="table-shell">
+            <div class="table-scroll" tabindex="0" aria-label="Poster Session 2 議程表，可左右滑動">
+              <table class="poster-table">
+                <thead>
+                  <tr><th>場次</th><th>海報順序</th><th>計畫主持人</th><th>計畫中文名稱</th></tr>
+                </thead>
+                <tbody>
+                <tr>
+                  <td class="session-code" data-label="場次">P2</td>
+                  <td class="poster-order" data-label="海報順序">1</td>
+                  <td class="project-host" data-label="計畫主持人">郭重顯</td>
+                  <td class="project-title" data-label="計畫中文名稱">具高動態平衡之雙足人形機器人開發與眼手腳協調應用(III)</td>
+                </tr>
+                <tr>
+                  <td class="session-code" data-label="場次">P2</td>
+                  <td class="poster-order" data-label="海報順序">2</td>
+                  <td class="project-host" data-label="計畫主持人">郭重顯</td>
+                  <td class="project-title" data-label="計畫中文名稱">同心管機器人研製及其雙臂自主操作</td>
+                </tr>
+                <tr>
+                  <td class="session-code" data-label="場次">P2</td>
+                  <td class="poster-order" data-label="海報順序">3</td>
+                  <td class="project-host" data-label="計畫主持人">包傑奇</td>
+                  <td class="project-title" data-label="計畫中文名稱">智慧型人形機器人複雜動作規劃</td>
+                </tr>
+                <tr>
+                  <td class="session-code" data-label="場次">P2</td>
+                  <td class="poster-order" data-label="海報順序">4</td>
+                  <td class="project-host" data-label="計畫主持人">陳美勇</td>
+                  <td class="project-title" data-label="計畫中文名稱">地面群組機器人進行合作搬運與群組導航技術之研發(II)</td>
+                </tr>
+                <tr>
+                  <td class="session-code" data-label="場次">P2</td>
+                  <td class="poster-order" data-label="海報順序">5</td>
+                  <td class="project-host" data-label="計畫主持人">李宜勳</td>
+                  <td class="project-title" data-label="計畫中文名稱">泛化型具演示及指令理解能力之任務型智慧機器人之研究(II)</td>
+                </tr>
+                <tr>
+                  <td class="session-code" data-label="場次">P2</td>
+                  <td class="poster-order" data-label="海報順序">6</td>
+                  <td class="project-host" data-label="計畫主持人">李聯旺</td>
+                  <td class="project-title" data-label="計畫中文名稱">模組化多功能單側下肢復健外骨骼系統開發與按需輔助控制</td>
+                </tr>
+                <tr>
+                  <td class="session-code" data-label="場次">P2</td>
+                  <td class="poster-order" data-label="海報順序">7</td>
+                  <td class="project-host" data-label="計畫主持人">鄭銘揚</td>
+                  <td class="project-title" data-label="計畫中文名稱">智慧型機器人系統應用於桌邊服務之關鍵技術研究</td>
+                </tr>
+                <tr>
+                  <td class="session-code" data-label="場次">P2</td>
+                  <td class="poster-order" data-label="海報順序">8</td>
+                  <td class="project-host" data-label="計畫主持人">黃國勝</td>
+                  <td class="project-title" data-label="計畫中文名稱">具三重空間圖卷積與變分訊息瓶頸機制之骨架動作辨識模型設計</td>
+                </tr>
+                <tr>
+                  <td class="session-code" data-label="場次">P2</td>
+                  <td class="poster-order" data-label="海報順序">9</td>
+                  <td class="project-host" data-label="計畫主持人">江叔盈</td>
+                  <td class="project-title" data-label="計畫中文名稱">具視覺聽覺與高互動性之導盲機器狗設計</td>
+                </tr>
+                <tr>
+                  <td class="session-code" data-label="場次">P2</td>
+                  <td class="poster-order" data-label="海報順序">10</td>
+                  <td class="project-host" data-label="計畫主持人">李政道</td>
+                  <td class="project-title" data-label="計畫中文名稱">創新分離式自主移動機器人驅動控制架構開發與智慧語音技術整合研究-實現以語音操控創新智慧控制模組與車體自動組裝並實際進行機器人派遣與任務執行</td>
+                </tr>
+                <tr>
+                  <td class="session-code" data-label="場次">P2</td>
+                  <td class="poster-order" data-label="海報順序">11</td>
+                  <td class="project-host" data-label="計畫主持人">詹竣傑</td>
+                  <td class="project-title" data-label="計畫中文名稱">六軸工業機械手臂之非末端點碰撞力量及碰撞位置估測技術</td>
+                </tr>
+                <tr>
+                  <td class="session-code" data-label="場次">P2</td>
+                  <td class="poster-order" data-label="海報順序">12</td>
+                  <td class="project-host" data-label="計畫主持人">王榮爵</td>
+                  <td class="project-title" data-label="計畫中文名稱">肌力/肌耐力增強型動力外骨骼(II)</td>
+                </tr>
+                <tr>
+                  <td class="session-code" data-label="場次">P2</td>
+                  <td class="poster-order" data-label="海報順序">13</td>
+                  <td class="project-host" data-label="計畫主持人">陳文輝</td>
+                  <td class="project-title" data-label="計畫中文名稱">應用Transformer發展自動駕駛鳥瞰視角之軌跡預測模型</td>
+                </tr>
+                <tr>
+                  <td class="session-code" data-label="場次">P2</td>
+                  <td class="poster-order" data-label="海報順序">14</td>
+                  <td class="project-host" data-label="計畫主持人">謝銘原</td>
+                  <td class="project-title" data-label="計畫中文名稱">基於AI視覺及聽覺辨識之智慧寵物管家機器人系統之設計與實現</td>
+                </tr>
+                <tr>
+                  <td class="session-code" data-label="場次">P2</td>
+                  <td class="poster-order" data-label="海報順序">15</td>
+                  <td class="project-host" data-label="計畫主持人">黃旭志</td>
+                  <td class="project-title" data-label="計畫中文名稱">智慧型六輪重載式全方位自主移動機器人之系統設計與建置</td>
+                </tr>
+                <tr>
+                  <td class="session-code" data-label="場次">P2</td>
+                  <td class="poster-order" data-label="海報順序">16</td>
+                  <td class="project-host" data-label="計畫主持人">張嘉文</td>
+                  <td class="project-title" data-label="計畫中文名稱">應用於通訊頻寬有限環境之群組機器人控制系統之設計與研究(II)</td>
+                </tr>
+                <tr>
+                  <td class="session-code" data-label="場次">P2</td>
+                  <td class="poster-order" data-label="海報順序">17</td>
+                  <td class="project-host" data-label="計畫主持人">林群富</td>
+                  <td class="project-title" data-label="計畫中文名稱">利用光譜分析於新一代磊晶晶圓缺陷偵測</td>
+                </tr>
+                <tr>
+                  <td class="session-code" data-label="場次">P2</td>
+                  <td class="poster-order" data-label="海報順序">18</td>
+                  <td class="project-host" data-label="計畫主持人">郭昭霖</td>
+                  <td class="project-title" data-label="計畫中文名稱">無人雙體船舶研製及其在航行控制與水文量測之應用(II)</td>
+                </tr>
+                <tr>
+                  <td class="session-code" data-label="場次">P2</td>
+                  <td class="poster-order" data-label="海報順序">19</td>
+                  <td class="project-host" data-label="計畫主持人">林顯易</td>
+                  <td class="project-title" data-label="計畫中文名稱">以自適應反應系統開發機器人具身智慧－桌球機器人為範例</td>
+                </tr>
+                <tr>
+                  <td class="session-code" data-label="場次">P2</td>
+                  <td class="poster-order" data-label="海報順序">20</td>
+                  <td class="project-host" data-label="計畫主持人">宋開泰</td>
+                  <td class="project-title" data-label="計畫中文名稱">基於數位孿生之示範資料擴增方法及其在雙臂機器人靈巧操作任務模仿學習之應用</td>
+                </tr>
+                <tr>
+                  <td class="session-code" data-label="場次">P2</td>
+                  <td class="poster-order" data-label="海報順序">21</td>
+                  <td class="project-host" data-label="計畫主持人">洪境晨</td>
+                  <td class="project-title" data-label="計畫中文名稱">邁向完全沉浸式虛擬運動介面：基於Human-in-the-Loop控制與擬真VR環境的模擬器研發</td>
+                </tr>
+                <tr>
+                  <td class="session-code" data-label="場次">P2</td>
+                  <td class="poster-order" data-label="海報順序">22</td>
+                  <td class="project-host" data-label="計畫主持人">程登湖</td>
+                  <td class="project-title" data-label="計畫中文名稱">基於人工智慧之無人機蜂群攔截系統開發</td>
+                </tr>
+                <tr>
+                  <td class="session-code" data-label="場次">P2</td>
+                  <td class="poster-order" data-label="海報順序">23</td>
+                  <td class="project-host" data-label="計畫主持人">廖梨君</td>
+                  <td class="project-title" data-label="計畫中文名稱">可自行復位之單足機器人之設計與製作</td>
+                </tr>
+                <tr>
+                  <td class="session-code" data-label="場次">P2</td>
+                  <td class="poster-order" data-label="海報順序">24</td>
+                  <td class="project-host" data-label="計畫主持人">許駿飛</td>
+                  <td class="project-title" data-label="計畫中文名稱">擁有前翼結構之尾立式垂直起降無人機研製</td>
+                </tr>
+                <tr>
+                  <td class="session-code" data-label="場次">P2</td>
+                  <td class="poster-order" data-label="海報順序">25</td>
+                  <td class="project-host" data-label="計畫主持人">黃正民</td>
+                  <td class="project-title" data-label="計畫中文名稱">運用軌跡預測網路之視覺環境與行為理解感知系統</td>
+                </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="poster-session" id="p3">
+        <div class="wrap">
+          <div class="dayhero">
+            <div>
+              <div class="section-kicker">Poster Session 3</div>
+              <h2>海報場次 P3</h2>
+            </div>
+            <div class="session-meta">
+              <strong>10/22/2026（四）</strong>
+              <span>14:00–15:30 · 24 件海報</span>
+            </div>
+          </div>
+          <div class="table-shell">
+            <div class="table-scroll" tabindex="0" aria-label="Poster Session 3 議程表，可左右滑動">
+              <table class="poster-table">
+                <thead>
+                  <tr><th>場次</th><th>海報順序</th><th>計畫主持人</th><th>計畫中文名稱</th></tr>
+                </thead>
+                <tbody>
+                <tr>
+                  <td class="session-code" data-label="場次">P3</td>
+                  <td class="poster-order" data-label="海報順序">1</td>
+                  <td class="project-host" data-label="計畫主持人">薩義德</td>
+                  <td class="project-title" data-label="計畫中文名稱">可跳過障礙物並拾取和放置敏感物體之自平衡雙臂機器人</td>
+                </tr>
+                <tr>
+                  <td class="session-code" data-label="場次">P3</td>
+                  <td class="poster-order" data-label="海報順序">2</td>
+                  <td class="project-host" data-label="計畫主持人">許閔傑</td>
+                  <td class="project-title" data-label="計畫中文名稱">基於多感知交叉專注模型於機器人思考框架及其AI加速晶片設計(II)</td>
+                </tr>
+                <tr>
+                  <td class="session-code" data-label="場次">P3</td>
+                  <td class="poster-order" data-label="海報順序">3</td>
+                  <td class="project-host" data-label="計畫主持人">林俊良</td>
+                  <td class="project-title" data-label="計畫中文名稱">精準動態體能估測與能量消耗之自主控制系統</td>
+                </tr>
+                <tr>
+                  <td class="session-code" data-label="場次">P3</td>
+                  <td class="poster-order" data-label="海報順序">4</td>
+                  <td class="project-host" data-label="計畫主持人">廖德祿</td>
+                  <td class="project-title" data-label="計畫中文名稱">基於Paillier加密結合混淆電路的隱私保護影像去背系統</td>
+                </tr>
+                <tr>
+                  <td class="session-code" data-label="場次">P3</td>
+                  <td class="poster-order" data-label="海報順序">5</td>
+                  <td class="project-host" data-label="計畫主持人">陳博現</td>
+                  <td class="project-title" data-label="計畫中文名稱">基於DNN人工智慧所驅動具有觀測及追蹤控制引導之人型機器人的步行及上下樓梯設計</td>
+                </tr>
+                <tr>
+                  <td class="session-code" data-label="場次">P3</td>
+                  <td class="poster-order" data-label="海報順序">6</td>
+                  <td class="project-host" data-label="計畫主持人">董必正</td>
+                  <td class="project-title" data-label="計畫中文名稱">應用AI技術於玻璃通孔製程優化與EdgeAI之實現</td>
+                </tr>
+                <tr>
+                  <td class="session-code" data-label="場次">P3</td>
+                  <td class="poster-order" data-label="海報順序">7</td>
+                  <td class="project-host" data-label="計畫主持人">練光祐</td>
+                  <td class="project-title" data-label="計畫中文名稱">超低延遲且輕量的語音辨識深度學習模型</td>
+                </tr>
+                <tr>
+                  <td class="session-code" data-label="場次">P3</td>
+                  <td class="poster-order" data-label="海報順序">8</td>
+                  <td class="project-host" data-label="計畫主持人">胡念祖</td>
+                  <td class="project-title" data-label="計畫中文名稱">具時延性之機器手臂反覆式學習控制</td>
+                </tr>
+                <tr>
+                  <td class="session-code" data-label="場次">P3</td>
+                  <td class="poster-order" data-label="海報順序">9</td>
+                  <td class="project-host" data-label="計畫主持人">蔡舜宏</td>
+                  <td class="project-title" data-label="計畫中文名稱">四旋翼協作運輸及其救災任務-一個基於機器學習及控制障礙函數之群體內外防碰撞與接觸力限制下的編隊追蹤方法</td>
+                </tr>
+                <tr>
+                  <td class="session-code" data-label="場次">P3</td>
+                  <td class="poster-order" data-label="海報順序">10</td>
+                  <td class="project-host" data-label="計畫主持人">林義楠</td>
+                  <td class="project-title" data-label="計畫中文名稱">基於加密的多因子身份認證之創新參數綁定：實現高安全性與可靠性</td>
+                </tr>
+                <tr>
+                  <td class="session-code" data-label="場次">P3</td>
+                  <td class="poster-order" data-label="海報順序">11</td>
+                  <td class="project-host" data-label="計畫主持人">陳政宏</td>
+                  <td class="project-title" data-label="計畫中文名稱">一個新穎的領域泛化多模態網路應用於道路上自由空間和車道線檢測</td>
+                </tr>
+                <tr>
+                  <td class="session-code" data-label="場次">P3</td>
+                  <td class="poster-order" data-label="海報順序">12</td>
+                  <td class="project-host" data-label="計畫主持人">陶金旺</td>
+                  <td class="project-title" data-label="計畫中文名稱">基於模糊高斯混合模型之動物骨架自動生成設計</td>
+                </tr>
+                <tr>
+                  <td class="session-code" data-label="場次">P3</td>
+                  <td class="poster-order" data-label="海報順序">13</td>
+                  <td class="project-host" data-label="計畫主持人">洪崇文</td>
+                  <td class="project-title" data-label="計畫中文名稱">以微處理器實現的多域多階教師知識蒸餾軸承診斷</td>
+                </tr>
+                <tr>
+                  <td class="session-code" data-label="場次">P3</td>
+                  <td class="poster-order" data-label="海報順序">14</td>
+                  <td class="project-host" data-label="計畫主持人">周阜毅</td>
+                  <td class="project-title" data-label="計畫中文名稱">狀態延遲系統及輸入延遲系統之低敏感性或強健性狀態觀測器的智能優化設計</td>
+                </tr>
+                <tr>
+                  <td class="session-code" data-label="場次">P3</td>
+                  <td class="poster-order" data-label="海報順序">15</td>
+                  <td class="project-host" data-label="計畫主持人">林進燈</td>
+                  <td class="project-title" data-label="計畫中文名稱">多模態輕度認知障礙智慧模型建構與其臨床醫學診斷驗證</td>
+                </tr>
+                <tr>
+                  <td class="session-code" data-label="場次">P3</td>
+                  <td class="poster-order" data-label="海報順序">16</td>
+                  <td class="project-host" data-label="計畫主持人">謝成君</td>
+                  <td class="project-title" data-label="計畫中文名稱">基於控制點之人工智慧迭代學習循跡控制</td>
+                </tr>
+                <tr>
+                  <td class="session-code" data-label="場次">P3</td>
+                  <td class="poster-order" data-label="海報順序">17</td>
+                  <td class="project-host" data-label="計畫主持人">陸敬互</td>
+                  <td class="project-title" data-label="計畫中文名稱">基於高階資訊之邊緣裝置可跨筒倉的直接轉移學習</td>
+                </tr>
+                <tr>
+                  <td class="session-code" data-label="場次">P3</td>
+                  <td class="poster-order" data-label="海報順序">18</td>
+                  <td class="project-host" data-label="計畫主持人">李佩君</td>
+                  <td class="project-title" data-label="計畫中文名稱">應用於星載及機載之智能移動物件偵測與辨識系統設計與研製</td>
+                </tr>
+                <tr>
+                  <td class="session-code" data-label="場次">P3</td>
+                  <td class="poster-order" data-label="海報順序">19</td>
+                  <td class="project-host" data-label="計畫主持人">陳秋宏</td>
+                  <td class="project-title" data-label="計畫中文名稱">建立生成式AI與演化計算合作求解流程於工業機器人與連桿機構逆運動學多重解之研究</td>
+                </tr>
+                <tr>
+                  <td class="session-code" data-label="場次">P3</td>
+                  <td class="poster-order" data-label="海報順序">20</td>
+                  <td class="project-host" data-label="計畫主持人">蔡松霖</td>
+                  <td class="project-title" data-label="計畫中文名稱">微流體晶片與無人機系統整合於微塑膠檢驗之研究</td>
+                </tr>
+                <tr>
+                  <td class="session-code" data-label="場次">P3</td>
+                  <td class="poster-order" data-label="海報順序">21</td>
+                  <td class="project-host" data-label="計畫主持人">陳瑄易</td>
+                  <td class="project-title" data-label="計畫中文名稱">電動車微電網系統之智慧型能源控制及其商用充電場域應用</td>
+                </tr>
+                <tr>
+                  <td class="session-code" data-label="場次">P3</td>
+                  <td class="poster-order" data-label="海報順序">22</td>
+                  <td class="project-host" data-label="計畫主持人">王富正</td>
+                  <td class="project-title" data-label="計畫中文名稱">混和擾動響應分解之敏感度分析與實驗驗證</td>
+                </tr>
+                <tr>
+                  <td class="session-code" data-label="場次">P3</td>
+                  <td class="poster-order" data-label="海報順序">23</td>
+                  <td class="project-host" data-label="計畫主持人">吳政郎</td>
+                  <td class="project-title" data-label="計畫中文名稱">一類具未知非線性項的時變非線性系統的控制器設計</td>
+                </tr>
+                <tr>
+                  <td class="session-code" data-label="場次">P3</td>
+                  <td class="poster-order" data-label="海報順序">24</td>
+                  <td class="project-host" data-label="計畫主持人">吳政郎</td>
+                  <td class="project-title" data-label="計畫中文名稱">基於懲罰法之具狀態與輸入限制條件的離散時間非線性控制系統控制器設計：非正規情況</td>
+                </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="poster-session" id="p4">
+        <div class="wrap">
+          <div class="dayhero">
+            <div>
+              <div class="section-kicker">Poster Session 4</div>
+              <h2>海報場次 P4</h2>
+            </div>
+            <div class="session-meta">
+              <strong>10/22/2026（四）</strong>
+              <span>14:00–15:30 · 25 件海報</span>
+            </div>
+          </div>
+          <div class="table-shell">
+            <div class="table-scroll" tabindex="0" aria-label="Poster Session 4 議程表，可左右滑動">
+              <table class="poster-table">
+                <thead>
+                  <tr><th>場次</th><th>海報順序</th><th>計畫主持人</th><th>計畫中文名稱</th></tr>
+                </thead>
+                <tbody>
+                <tr>
+                  <td class="session-code" data-label="場次">P4</td>
+                  <td class="poster-order" data-label="海報順序">1</td>
+                  <td class="project-host" data-label="計畫主持人">陳永耀</td>
+                  <td class="project-title" data-label="計畫中文名稱">多分類肝腫瘤病理切片之深度學習分類系統研發及臨床診斷輔助軟體系統設計(2/3)</td>
+                </tr>
+                <tr>
+                  <td class="session-code" data-label="場次">P4</td>
+                  <td class="poster-order" data-label="海報順序">2</td>
+                  <td class="project-host" data-label="計畫主持人">李俊賢</td>
+                  <td class="project-title" data-label="計畫中文名稱">應用標準差資料處理方法於以智慧型手機內建感測器為基礎之行為辨識系統研發</td>
+                </tr>
+                <tr>
+                  <td class="session-code" data-label="場次">P4</td>
+                  <td class="poster-order" data-label="海報順序">3</td>
+                  <td class="project-host" data-label="計畫主持人">邱謙松</td>
+                  <td class="project-title" data-label="計畫中文名稱">具服務需求意圖判斷之年長者照護機器人系統(II)</td>
+                </tr>
+                <tr>
+                  <td class="session-code" data-label="場次">P4</td>
+                  <td class="poster-order" data-label="海報順序">4</td>
+                  <td class="project-host" data-label="計畫主持人">楊佳燕</td>
+                  <td class="project-title" data-label="計畫中文名稱">結合腦控與自控排程之個人化手部外骨骼復健系統設計</td>
+                </tr>
+                <tr>
+                  <td class="session-code" data-label="場次">P4</td>
+                  <td class="poster-order" data-label="海報順序">5</td>
+                  <td class="project-host" data-label="計畫主持人">湯松年</td>
+                  <td class="project-title" data-label="計畫中文名稱">針對居家心律不整檢測應用之神經網路開發與SoC-FPGA實現</td>
+                </tr>
+                <tr>
+                  <td class="session-code" data-label="場次">P4</td>
+                  <td class="poster-order" data-label="海報順序">6</td>
+                  <td class="project-host" data-label="計畫主持人">陳浩瑋</td>
+                  <td class="project-title" data-label="計畫中文名稱">使用機器學習與矽晶片技術於居家、社區及長照機構快速檢驗泌尿道感染與細菌抗藥性</td>
+                </tr>
+                <tr>
+                  <td class="session-code" data-label="場次">P4</td>
+                  <td class="poster-order" data-label="海報順序">7</td>
+                  <td class="project-host" data-label="計畫主持人">李容婷</td>
+                  <td class="project-title" data-label="計畫中文名稱">應用人工智慧建構急診高齡患者重症預測模型</td>
+                </tr>
+                <tr>
+                  <td class="session-code" data-label="場次">P4</td>
+                  <td class="poster-order" data-label="海報順序">8</td>
+                  <td class="project-host" data-label="計畫主持人">賴香月</td>
+                  <td class="project-title" data-label="計畫中文名稱">實現臉部表情捕捉和肢體骨架睡姿辨識為基礎分類器於嬰兒猝死症(SIDS)預防照護系統之研製</td>
+                </tr>
+                <tr>
+                  <td class="session-code" data-label="場次">P4</td>
+                  <td class="poster-order" data-label="海報順序">9</td>
+                  <td class="project-host" data-label="計畫主持人">李建德</td>
+                  <td class="project-title" data-label="計畫中文名稱">基於對抗式學習與自注意力機制之眼底鏡影像的動靜脈血管自動分析</td>
+                </tr>
+                <tr>
+                  <td class="session-code" data-label="場次">P4</td>
+                  <td class="poster-order" data-label="海報順序">10</td>
+                  <td class="project-host" data-label="計畫主持人">張家宏</td>
+                  <td class="project-title" data-label="計畫中文名稱">應用於寵物生理訊號感測之非侵入式無線雷達系統研製</td>
+                </tr>
+                <tr>
+                  <td class="session-code" data-label="場次">P4</td>
+                  <td class="poster-order" data-label="海報順序">11</td>
+                  <td class="project-host" data-label="計畫主持人">郭書麟</td>
+                  <td class="project-title" data-label="計畫中文名稱">開發精準針對海馬迴部位之非侵入性經顱電刺激裝置並研究其在阿茲海默症的治療潛力</td>
+                </tr>
+                <tr>
+                  <td class="session-code" data-label="場次">P4</td>
+                  <td class="poster-order" data-label="海報順序">12</td>
+                  <td class="project-host" data-label="計畫主持人">姚書農</td>
+                  <td class="project-title" data-label="計畫中文名稱">以智慧音箱內建麥克風陣列實現跌倒偵測系統</td>
+                </tr>
+                <tr>
+                  <td class="session-code" data-label="場次">P4</td>
+                  <td class="poster-order" data-label="海報順序">13</td>
+                  <td class="project-host" data-label="計畫主持人">吳炳飛</td>
+                  <td class="project-title" data-label="計畫中文名稱">基於遠距光體積變化描記圖之血糖異常篩檢系統</td>
+                </tr>
+                <tr>
+                  <td class="session-code" data-label="場次">P4</td>
+                  <td class="poster-order" data-label="海報順序">14</td>
+                  <td class="project-host" data-label="計畫主持人">饒啟文</td>
+                  <td class="project-title" data-label="計畫中文名稱">偏頭痛的精準醫療診斷：機器學習驅動的形態生物標記碎形維度分析</td>
+                </tr>
+                <tr>
+                  <td class="session-code" data-label="場次">P4</td>
+                  <td class="poster-order" data-label="海報順序">15</td>
+                  <td class="project-host" data-label="計畫主持人">楊子賢</td>
+                  <td class="project-title" data-label="計畫中文名稱">發展人類順式調控模組辨識和機制研究模型並建立基因醫學工具以分析與疾病相關的順式調控模組變異</td>
+                </tr>
+                <tr>
+                  <td class="session-code" data-label="場次">P4</td>
+                  <td class="poster-order" data-label="海報順序">16</td>
+                  <td class="project-host" data-label="計畫主持人">呂成凱</td>
+                  <td class="project-title" data-label="計畫中文名稱">用於光學同調斷層掃描之基於深度學習和聯合學習框架之視網膜積液檢測與分割技術(II)</td>
+                </tr>
+                <tr>
+                  <td class="session-code" data-label="場次">P4</td>
+                  <td class="poster-order" data-label="海報順序">17</td>
+                  <td class="project-host" data-label="計畫主持人">吳謂勝</td>
+                  <td class="project-title" data-label="計畫中文名稱">偵測tRNA的修飾: 發展演算法、創建網頁分析工具及資料庫、研究生物問題</td>
+                </tr>
+                <tr>
+                  <td class="session-code" data-label="場次">P4</td>
+                  <td class="poster-order" data-label="海報順序">18</td>
+                  <td class="project-host" data-label="計畫主持人">徐國鎧</td>
+                  <td class="project-title" data-label="計畫中文名稱">非侵入式癲癇診斷回饋系統開發與臨床實證-癲癇偵測演算法與分類策略</td>
+                </tr>
+                <tr>
+                  <td class="session-code" data-label="場次">P4</td>
+                  <td class="poster-order" data-label="海報順序">19</td>
+                  <td class="project-host" data-label="計畫主持人">蔡進聰</td>
+                  <td class="project-title" data-label="計畫中文名稱">研發穩健型物件偵測整合模型應用於醫療影像病灶的偵測與辨識</td>
+                </tr>
+                <tr>
+                  <td class="session-code" data-label="場次">P4</td>
+                  <td class="poster-order" data-label="海報順序">20</td>
+                  <td class="project-host" data-label="計畫主持人">李慶鴻</td>
+                  <td class="project-title" data-label="計畫中文名稱">研製智慧化海事監控雷達多目標偵測及追蹤系統</td>
+                </tr>
+                <tr>
+                  <td class="session-code" data-label="場次">P4</td>
+                  <td class="poster-order" data-label="海報順序">21</td>
+                  <td class="project-host" data-label="計畫主持人">連豊力</td>
+                  <td class="project-title" data-label="計畫中文名稱">自主移動機器人數位雙生系統之感測、感知和運動規劃控制</td>
+                </tr>
+                <tr>
+                  <td class="session-code" data-label="場次">P4</td>
+                  <td class="poster-order" data-label="海報順序">22</td>
+                  <td class="project-host" data-label="計畫主持人">劉彥辰</td>
+                  <td class="project-title" data-label="計畫中文名稱">觸覺回饋技術於網宇實體架構之遠端人機互動控制系統</td>
+                </tr>
+                <tr>
+                  <td class="session-code" data-label="場次">P4</td>
+                  <td class="poster-order" data-label="海報順序">23</td>
+                  <td class="project-host" data-label="計畫主持人">蔣欣翰</td>
+                  <td class="project-title" data-label="計畫中文名稱">具備資料驅動之自駕車安全性模型預測控制設計及測試驗證</td>
+                </tr>
+                <tr>
+                  <td class="session-code" data-label="場次">P4</td>
+                  <td class="poster-order" data-label="海報順序">24</td>
+                  <td class="project-host" data-label="計畫主持人">彭昭暐</td>
+                  <td class="project-title" data-label="計畫中文名稱">行人意圖預測與語言生成模型應用於自動駕駛</td>
+                </tr>
+                <tr>
+                  <td class="session-code" data-label="場次">P4</td>
+                  <td class="poster-order" data-label="海報順序">25</td>
+                  <td class="project-host" data-label="計畫主持人">陳柏全</td>
+                  <td class="project-title" data-label="計畫中文名稱">智慧型匝道匯入決策控制與虛實整合驗證</td>
+                </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="poster-session" id="p5">
+        <div class="wrap">
+          <div class="dayhero">
+            <div>
+              <div class="section-kicker">Poster Session 5</div>
+              <h2>海報場次 P5</h2>
+            </div>
+            <div class="session-meta">
+              <strong>10/23/2026（五）</strong>
+              <span>10:30–12:00 · 25 件海報</span>
+            </div>
+          </div>
+          <div class="table-shell">
+            <div class="table-scroll" tabindex="0" aria-label="Poster Session 5 議程表，可左右滑動">
+              <table class="poster-table">
+                <thead>
+                  <tr><th>場次</th><th>海報順序</th><th>計畫主持人</th><th>計畫中文名稱</th></tr>
+                </thead>
+                <tbody>
+                <tr>
+                  <td class="session-code" data-label="場次">P5</td>
+                  <td class="poster-order" data-label="海報順序">1</td>
+                  <td class="project-host" data-label="計畫主持人">呂藝光</td>
+                  <td class="project-title" data-label="計畫中文名稱">智慧型流域多水庫操控決策設計與應用</td>
+                </tr>
+                <tr>
+                  <td class="session-code" data-label="場次">P5</td>
+                  <td class="poster-order" data-label="海報順序">2</td>
+                  <td class="project-host" data-label="計畫主持人">許陳鑑</td>
+                  <td class="project-title" data-label="計畫中文名稱">基於邊緣運算之即時異常偵測監控系統</td>
+                </tr>
+                <tr>
+                  <td class="session-code" data-label="場次">P5</td>
+                  <td class="poster-order" data-label="海報順序">3</td>
+                  <td class="project-host" data-label="計畫主持人">張朝陽</td>
+                  <td class="project-title" data-label="計畫中文名稱">強化人體動作偵測機制與應用之研究</td>
+                </tr>
+                <tr>
+                  <td class="session-code" data-label="場次">P5</td>
+                  <td class="poster-order" data-label="海報順序">4</td>
+                  <td class="project-host" data-label="計畫主持人">柯立偉</td>
+                  <td class="project-title" data-label="計畫中文名稱">開發適應性個人化神經復健生成式AI系統實用於臨床中風復健</td>
+                </tr>
+                <tr>
+                  <td class="session-code" data-label="場次">P5</td>
+                  <td class="poster-order" data-label="海報順序">5</td>
+                  <td class="project-host" data-label="計畫主持人">余國瑞</td>
+                  <td class="project-title" data-label="計畫中文名稱">基於人工智慧之太陽光電系統強健控制與發電預測</td>
+                </tr>
+                <tr>
+                  <td class="session-code" data-label="場次">P5</td>
+                  <td class="poster-order" data-label="海報順序">6</td>
+                  <td class="project-host" data-label="計畫主持人">呂有勝</td>
+                  <td class="project-title" data-label="計畫中文名稱">符合IEPE規範的急動度感測及其於平滑運動控制之應用(II)</td>
+                </tr>
+                <tr>
+                  <td class="session-code" data-label="場次">P5</td>
+                  <td class="poster-order" data-label="海報順序">7</td>
+                  <td class="project-host" data-label="計畫主持人">吳俊緯</td>
+                  <td class="project-title" data-label="計畫中文名稱">新型智能化自走車結合AI影像辨識與數位孿生技術應用於減緩工廠倉儲人力配置</td>
+                </tr>
+                <tr>
+                  <td class="session-code" data-label="場次">P5</td>
+                  <td class="poster-order" data-label="海報順序">8</td>
+                  <td class="project-host" data-label="計畫主持人">莊季高</td>
+                  <td class="project-title" data-label="計畫中文名稱">離岸流檢測系統整合與開發(1/2)</td>
+                </tr>
+                <tr>
+                  <td class="session-code" data-label="場次">P5</td>
+                  <td class="poster-order" data-label="海報順序">9</td>
+                  <td class="project-host" data-label="計畫主持人">張文哲</td>
+                  <td class="project-title" data-label="計畫中文名稱">在網路安全挑戰下藉由對穩定翼之區間型Type-2模糊控制提升具不確定性與隨機行為的非線性船舶橫搖穩定性</td>
+                </tr>
+                <tr>
+                  <td class="session-code" data-label="場次">P5</td>
+                  <td class="poster-order" data-label="海報順序">10</td>
+                  <td class="project-host" data-label="計畫主持人">李昭賢</td>
+                  <td class="project-title" data-label="計畫中文名稱">以環狀時間敏感乙太網結合動態調適隨機線性網路編碼實踐安全網路切片軟體系統</td>
+                </tr>
+                <tr>
+                  <td class="session-code" data-label="場次">P5</td>
+                  <td class="poster-order" data-label="海報順序">11</td>
+                  <td class="project-host" data-label="計畫主持人">林玉堃</td>
+                  <td class="project-title" data-label="計畫中文名稱">智慧型超音波振動系統即時回控技術</td>
+                </tr>
+                <tr>
+                  <td class="session-code" data-label="場次">P5</td>
+                  <td class="poster-order" data-label="海報順序">12</td>
+                  <td class="project-host" data-label="計畫主持人">張文陽</td>
+                  <td class="project-title" data-label="計畫中文名稱">基於觸覺補償機械手臂之視覺3D點雲曲面焊接技術</td>
+                </tr>
+                <tr>
+                  <td class="session-code" data-label="場次">P5</td>
+                  <td class="poster-order" data-label="海報順序">13</td>
+                  <td class="project-host" data-label="計畫主持人">宋文財</td>
+                  <td class="project-title" data-label="計畫中文名稱">動態策略梯度方法應用於多生長茶樹視覺感知技術</td>
+                </tr>
+                <tr>
+                  <td class="session-code" data-label="場次">P5</td>
+                  <td class="poster-order" data-label="海報順序">14</td>
+                  <td class="project-host" data-label="計畫主持人">陳韋達</td>
+                  <td class="project-title" data-label="計畫中文名稱">航空影像壓縮暨階層式顯著物偵測之硬體加速控制系統設計與實現(II)</td>
+                </tr>
+                <tr>
+                  <td class="session-code" data-label="場次">P5</td>
+                  <td class="poster-order" data-label="海報順序">15</td>
+                  <td class="project-host" data-label="計畫主持人">楊棧雲</td>
+                  <td class="project-title" data-label="計畫中文名稱">半導體晶圓薄化製程之能源效能優化建模並以之建立數位孿生</td>
+                </tr>
+                <tr>
+                  <td class="session-code" data-label="場次">P5</td>
+                  <td class="poster-order" data-label="海報順序">16</td>
+                  <td class="project-host" data-label="計畫主持人">劉東官</td>
+                  <td class="project-title" data-label="計畫中文名稱">結合元宇宙與數位PDCA技術設計閉環CPS智慧工廠之研究Ⅲ</td>
+                </tr>
+                <tr>
+                  <td class="session-code" data-label="場次">P5</td>
+                  <td class="poster-order" data-label="海報順序">17</td>
+                  <td class="project-host" data-label="計畫主持人">許益賓</td>
+                  <td class="project-title" data-label="計畫中文名稱">研發可商用化之具備及時指紋感測與辨識鍵盤系統</td>
+                </tr>
+                <tr>
+                  <td class="session-code" data-label="場次">P5</td>
+                  <td class="poster-order" data-label="海報順序">18</td>
+                  <td class="project-host" data-label="計畫主持人">蘇于庭</td>
+                  <td class="project-title" data-label="計畫中文名稱">多機器人系統應用於生成式物件辨識推論方法與任務排程最佳化之系統研製</td>
+                </tr>
+                <tr>
+                  <td class="session-code" data-label="場次">P5</td>
+                  <td class="poster-order" data-label="海報順序">19</td>
+                  <td class="project-host" data-label="計畫主持人">傅立成</td>
+                  <td class="project-title" data-label="計畫中文名稱">結合光學與原子力顯微技術針對大範圍高側壁之3D樣本開發前瞻複合式精密量測系統</td>
+                </tr>
+                <tr>
+                  <td class="session-code" data-label="場次">P5</td>
+                  <td class="poster-order" data-label="海報順序">20</td>
+                  <td class="project-host" data-label="計畫主持人">江佩如</td>
+                  <td class="project-title" data-label="計畫中文名稱">以結構光重建交互反射物體技術之開發</td>
+                </tr>
+                <tr>
+                  <td class="session-code" data-label="場次">P5</td>
+                  <td class="poster-order" data-label="海報順序">21</td>
+                  <td class="project-host" data-label="計畫主持人">黃惟泰</td>
+                  <td class="project-title" data-label="計畫中文名稱">穩健智慧化建模技術優化金屬粉末射出成型齒列矯正器製程之多目標最佳化與預測模型建立</td>
+                </tr>
+                <tr>
+                  <td class="session-code" data-label="場次">P5</td>
+                  <td class="poster-order" data-label="海報順序">22</td>
+                  <td class="project-host" data-label="計畫主持人">李柏磊</td>
+                  <td class="project-title" data-label="計畫中文名稱">非侵入式癲癇診斷回饋系統開發與臨床實證-腦波偵測與刺激回饋裝置開發</td>
+                </tr>
+                <tr>
+                  <td class="session-code" data-label="場次">P5</td>
+                  <td class="poster-order" data-label="海報順序">23</td>
+                  <td class="project-host" data-label="計畫主持人">何文獻</td>
+                  <td class="project-title" data-label="計畫中文名稱">應用注入式諧振反應肌音圖結合人工智慧方法發展肌力與肌耐力即時量測智能評估系統之研究</td>
+                </tr>
+                <tr>
+                  <td class="session-code" data-label="場次">P5</td>
+                  <td class="poster-order" data-label="海報順序">24</td>
+                  <td class="project-host" data-label="計畫主持人">鍾翊方</td>
+                  <td class="project-title" data-label="計畫中文名稱">基於深度學習技術之可解釋性藥物反應預測系統</td>
+                </tr>
+                <tr>
+                  <td class="session-code" data-label="場次">P5</td>
+                  <td class="poster-order" data-label="海報順序">25</td>
+                  <td class="project-host" data-label="計畫主持人">李世安</td>
+                  <td class="project-title" data-label="計畫中文名稱">基於FPGA晶片設計的深度強化學習系統之加速器研究與應用</td>
+                </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="poster-session" id="p6">
+        <div class="wrap">
+          <div class="dayhero">
+            <div>
+              <div class="section-kicker">Poster Session 6</div>
+              <h2>海報場次 P6</h2>
+            </div>
+            <div class="session-meta">
+              <strong>10/23/2026（五）</strong>
+              <span>10:30–12:00 · 25 件海報</span>
+            </div>
+          </div>
+          <div class="table-shell">
+            <div class="table-scroll" tabindex="0" aria-label="Poster Session 6 議程表，可左右滑動">
+              <table class="poster-table">
+                <thead>
+                  <tr><th>場次</th><th>海報順序</th><th>計畫主持人</th><th>計畫中文名稱</th></tr>
+                </thead>
+                <tbody>
+                <tr>
+                  <td class="session-code" data-label="場次">P6</td>
+                  <td class="poster-order" data-label="海報順序">1</td>
+                  <td class="project-host" data-label="計畫主持人">李祖聖</td>
+                  <td class="project-title" data-label="計畫中文名稱">智慧人形機器人之研製及其於人機協作場域之應用(III)</td>
+                </tr>
+                <tr>
+                  <td class="session-code" data-label="場次">P6</td>
+                  <td class="poster-order" data-label="海報順序">2</td>
+                  <td class="project-host" data-label="計畫主持人">郭秉寰</td>
+                  <td class="project-title" data-label="計畫中文名稱">多樣態機器人協作策略與動作控制系統之研發</td>
+                </tr>
+                <tr>
+                  <td class="session-code" data-label="場次">P6</td>
+                  <td class="poster-order" data-label="海報順序">3</td>
+                  <td class="project-host" data-label="計畫主持人">陳翔傑</td>
+                  <td class="project-title" data-label="計畫中文名稱">基於大型動作模型的移動式機器手臂控制：辦公室內物品傳遞與撿拾應用</td>
+                </tr>
+                <tr>
+                  <td class="session-code" data-label="場次">P6</td>
+                  <td class="poster-order" data-label="海報順序">4</td>
+                  <td class="project-host" data-label="計畫主持人">黃志良</td>
+                  <td class="project-title" data-label="計畫中文名稱">以深度學習為基的視覺/慣性之同時定位與地圖生成於領導無人機之即時路徑規劃及4G網路為基的異質多無人機之群飛</td>
+                </tr>
+                <tr>
+                  <td class="session-code" data-label="場次">P6</td>
+                  <td class="poster-order" data-label="海報順序">5</td>
+                  <td class="project-host" data-label="計畫主持人">顏家鈺</td>
+                  <td class="project-title" data-label="計畫中文名稱">以能適合崎嶇地形行動之雙足機器人控制為基礎之外骨骼設計</td>
+                </tr>
+                <tr>
+                  <td class="session-code" data-label="場次">P6</td>
+                  <td class="poster-order" data-label="海報順序">6</td>
+                  <td class="project-host" data-label="計畫主持人">莊景崴</td>
+                  <td class="project-title" data-label="計畫中文名稱">分散式自主地空機器人任務分配與協作(II)</td>
+                </tr>
+                <tr>
+                  <td class="session-code" data-label="場次">P6</td>
+                  <td class="poster-order" data-label="海報順序">7</td>
+                  <td class="project-host" data-label="計畫主持人">張仲良</td>
+                  <td class="project-title" data-label="計畫中文名稱">基於多模態點雲與層級強化學習的空地協作機器人密瓜養護研究</td>
+                </tr>
+                <tr>
+                  <td class="session-code" data-label="場次">P6</td>
+                  <td class="poster-order" data-label="海報順序">8</td>
+                  <td class="project-host" data-label="計畫主持人">林惠勇</td>
+                  <td class="project-title" data-label="計畫中文名稱">基於生成式 AI之機器人導航、手臂控制及人機協作技術開發</td>
+                </tr>
+                <tr>
+                  <td class="session-code" data-label="場次">P6</td>
+                  <td class="poster-order" data-label="海報順序">9</td>
+                  <td class="project-host" data-label="計畫主持人">王銀添</td>
+                  <td class="project-title" data-label="計畫中文名稱">基於大型模型之持續強化學習及其在機器人動作學習之應用</td>
+                </tr>
+                <tr>
+                  <td class="session-code" data-label="場次">P6</td>
+                  <td class="poster-order" data-label="海報順序">10</td>
+                  <td class="project-host" data-label="計畫主持人">劉智誠</td>
+                  <td class="project-title" data-label="計畫中文名稱">體現動畫角色之人形機器人的軟硬體系統開發與動作生成(II)</td>
+                </tr>
+                <tr>
+                  <td class="session-code" data-label="場次">P6</td>
+                  <td class="poster-order" data-label="海報順序">11</td>
+                  <td class="project-host" data-label="計畫主持人">翁愷貽</td>
+                  <td class="project-title" data-label="計畫中文名稱">多機器人視覺同步定位與地圖建構與環境物件語意建置</td>
+                </tr>
+                <tr>
+                  <td class="session-code" data-label="場次">P6</td>
+                  <td class="poster-order" data-label="海報順序">12</td>
+                  <td class="project-host" data-label="計畫主持人">蔣惟丞</td>
+                  <td class="project-title" data-label="計畫中文名稱">深度模型學習之經驗重現結合深度強化學習於智慧機器人</td>
+                </tr>
+                <tr>
+                  <td class="session-code" data-label="場次">P6</td>
+                  <td class="poster-order" data-label="海報順序">13</td>
+                  <td class="project-host" data-label="計畫主持人">蕭得聖</td>
+                  <td class="project-title" data-label="計畫中文名稱">適用於輔助各項下肢運動之輕量型外骨骼機器人</td>
+                </tr>
+                <tr>
+                  <td class="session-code" data-label="場次">P6</td>
+                  <td class="poster-order" data-label="海報順序">14</td>
+                  <td class="project-host" data-label="計畫主持人">魏榮宗</td>
+                  <td class="project-title" data-label="計畫中文名稱">數位孿生人工智慧再生能源發電與負載預測及其用電成本最佳化調度技術研究</td>
+                </tr>
+                <tr>
+                  <td class="session-code" data-label="場次">P6</td>
+                  <td class="poster-order" data-label="海報順序">15</td>
+                  <td class="project-host" data-label="計畫主持人">何明字</td>
+                  <td class="project-title" data-label="計畫中文名稱">無人自行車之軌跡追蹤與多重感測器導航</td>
+                </tr>
+                <tr>
+                  <td class="session-code" data-label="場次">P6</td>
+                  <td class="poster-order" data-label="海報順序">16</td>
+                  <td class="project-host" data-label="計畫主持人">王文俊</td>
+                  <td class="project-title" data-label="計畫中文名稱">居家環境之智慧型無人自走車功能建置</td>
+                </tr>
+                <tr>
+                  <td class="session-code" data-label="場次">P6</td>
+                  <td class="poster-order" data-label="海報順序">17</td>
+                  <td class="project-host" data-label="計畫主持人">林苑婷</td>
+                  <td class="project-title" data-label="計畫中文名稱">智慧型輪椅輔助動力系統(II)</td>
+                </tr>
+                <tr>
+                  <td class="session-code" data-label="場次">P6</td>
+                  <td class="poster-order" data-label="海報順序">18</td>
+                  <td class="project-host" data-label="計畫主持人">林明義</td>
+                  <td class="project-title" data-label="計畫中文名稱">iPABan robot-實現AR虛實整合沉浸式體驗之幼童伴讀互動式學習機器人</td>
+                </tr>
+                <tr>
+                  <td class="session-code" data-label="場次">P6</td>
+                  <td class="poster-order" data-label="海報順序">19</td>
+                  <td class="project-host" data-label="計畫主持人">黃正自</td>
+                  <td class="project-title" data-label="計畫中文名稱">結合類神經觀測器之多無人機吊載運輸控制設計</td>
+                </tr>
+                <tr>
+                  <td class="session-code" data-label="場次">P6</td>
+                  <td class="poster-order" data-label="海報順序">20</td>
+                  <td class="project-host" data-label="計畫主持人">張欣宏</td>
+                  <td class="project-title" data-label="計畫中文名稱">基於解耦合之快速適應性永磁馬達強健控制研究</td>
+                </tr>
+                <tr>
+                  <td class="session-code" data-label="場次">P6</td>
+                  <td class="poster-order" data-label="海報順序">21</td>
+                  <td class="project-host" data-label="計畫主持人">彭守道</td>
+                  <td class="project-title" data-label="計畫中文名稱">基於輪胎/地面摩擦鑑別與即時提升李亞普諾夫導數負定性之一類車輛主動式安全控制律強化方案</td>
+                </tr>
+                <tr>
+                  <td class="session-code" data-label="場次">P6</td>
+                  <td class="poster-order" data-label="海報順序">22</td>
+                  <td class="project-host" data-label="計畫主持人">陳斌勇</td>
+                  <td class="project-title" data-label="計畫中文名稱">多模態感測器數據融合技術應用於道路標線品質即時檢測</td>
+                </tr>
+                <tr>
+                  <td class="session-code" data-label="場次">P6</td>
+                  <td class="poster-order" data-label="海報順序">23</td>
+                  <td class="project-host" data-label="計畫主持人">胡家勝</td>
+                  <td class="project-title" data-label="計畫中文名稱">次世代電動載具動力總成核心差速器技術開發</td>
+                </tr>
+                <tr>
+                  <td class="session-code" data-label="場次">P6</td>
+                  <td class="poster-order" data-label="海報順序">24</td>
+                  <td class="project-host" data-label="計畫主持人">林正堅</td>
+                  <td class="project-title" data-label="計畫中文名稱">智慧型無人機與無人地面載具協作於社區監控應用</td>
+                </tr>
+                <tr>
+                  <td class="session-code" data-label="場次">P6</td>
+                  <td class="poster-order" data-label="海報順序">25</td>
+                  <td class="project-host" data-label="計畫主持人">林昱成</td>
+                  <td class="project-title" data-label="計畫中文名稱">結合數位孿生實現具全域觀之自駕車認知決策與控制系統</td>
+                </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="footer">
+      <div class="wrap"><strong>國科會工程處控制學門</strong> · 114年度成果報告議程 · 資料來源：成果海報議程第七版</div>
+    </footer>
+  </body>
+</html>
