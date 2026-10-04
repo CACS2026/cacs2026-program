@@ -20,7 +20,9 @@
         box-sizing:border-box
       }
       html{
-        scroll-behavior:smooth
+        scroll-behavior:smooth;
+        -webkit-text-size-adjust:100%;
+        text-size-adjust:100%
       }
       body{
         margin:0;
@@ -1203,9 +1205,16 @@
           grid-column:1
         }
         .glance-program-row{
-          grid-template-columns:92px minmax(0,1fr);
-          gap:8px 10px;
+          grid-template-columns:max-content minmax(0,1fr);
+          gap:8px 12px;
           padding:10px 0
+        }
+        .glance-program-time{
+          font-size:14px
+        }
+        .glance-program-topic,.glance-program-venue{
+          min-width:0;
+          overflow-wrap:anywhere
         }
         .glance-program-venue{
           grid-column:2
