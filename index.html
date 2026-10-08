@@ -1428,10 +1428,10 @@
       <section class="atglance" id="glance">
         <div class="wrap">
           <div class="paper-id-search">
-            <label for="paper-id-search-input">搜尋 Paper ID</label>
+            <label for="paper-id-search-input">Search by Paper ID</label>
             <form class="paper-id-search-form" id="paper-id-search-form" role="search">
-              <input id="paper-id-search-input" name="paper-id" type="search" inputmode="numeric" pattern="[0-9]{4}" maxlength="4" placeholder="請輸入 Paper ID，例如 1060" autocomplete="off"/>
-              <button type="submit">搜尋</button>
+              <input id="paper-id-search-input" name="paper-id" type="search" inputmode="numeric" maxlength="4" placeholder="Enter a Paper ID, e.g. 1060" autocomplete="off"/>
+              <button type="submit">Search</button>
             </form>
             <p class="paper-id-search-status" id="paper-id-search-status" aria-live="polite"></p>
           </div>
@@ -1456,7 +1456,7 @@
                 <div class="glance-program-row"><div class="glance-program-time">09:00–10:30</div><div class="glance-program-topic">Sessions Track 1 / NSTC Poster 1</div><div class="glance-program-venue">Session Rooms (Virtuosi Hall Room V002–V009) / Conference Hall</div></div>
                 <div class="glance-program-row"><div class="glance-program-time">10:30–11:00</div><div class="glance-program-topic">Coffee &amp; Tea Break</div><div class="glance-program-venue"></div></div>
                 <div class="glance-program-row"><div class="glance-program-time">11:00–11:10</div><div class="glance-program-topic">Opening Ceremony</div><div class="glance-program-venue">Virtuosi Hall Room V001</div></div>
-                <div class="glance-program-row keynote-glance-row"><div class="glance-program-time">11:10–12:00</div><div class="glance-program-topic"><span class="keynote-name">Keynote Speech I</span><span class="keynote-glance-topic is-empty"><!-- Keynote Speech I 題目請填在這裡 -->&nbsp;</span><small>Prof. Yiran Chen, Duke University, USA</small></div><div class="glance-program-venue">Virtuosi Hall Room V001</div></div>
+                <div class="glance-program-row keynote-glance-row"><div class="glance-program-time">11:10–12:00</div><div class="glance-program-topic"><span class="keynote-name">Keynote Speech I</span><span class="keynote-glance-topic">From Tokens to Topology: System-Level LLM Optimization for Latency, Throughput, and Cost in Production Workflows</span><small>Prof. Yiran Chen, Duke University, USA</small></div><div class="glance-program-venue">Virtuosi Hall Room V001</div></div>
                 <div class="glance-program-row"><div class="glance-program-time">12:00–13:00</div><div class="glance-program-topic">Lunch / CAC Board Meeting (Room: V003)</div><div class="glance-program-venue"></div></div>
                 <div class="glance-program-row keynote-glance-row"><div class="glance-program-time">13:10–14:00</div><div class="glance-program-topic"><span class="keynote-name">Keynote Speech II</span><small>Prof. Tsu-Chin Tsao, The University of California, Los Angeles (UCLA), USA</small></div><div class="glance-program-venue">Virtuosi Hall Room V001</div></div>
                 <div class="glance-program-row"><div class="glance-program-time">14:00–15:30</div><div class="glance-program-topic">Sessions Track 2 / NSTC Poster 2 / Best Paper 1 / Best Student Paper 1 / Sponsor Spotlight</div><div class="glance-program-venue">Session Rooms (Virtuosi Hall Room V002–V009) / Conference Hall</div></div>
@@ -1736,7 +1736,7 @@
               <div class="day-agenda-time keynote-time">11:10–12:00</div>
               <div>
                 <div class="day-agenda-title keynote-label">Keynote Speech I</div>
-                <div class="keynote-topic"><!-- Keynote Speech I 題目請填在這裡 -->&nbsp;</div>
+                <div class="keynote-topic">From Tokens to Topology: System-Level LLM Optimization for Latency, Throughput, and Cost in Production Workflows</div>
                 <div class="day-agenda-detail">Prof. Yiran Chen · Duke University, USA</div>
               </div>
               <div class="day-agenda-venue">Virtuosi Hall Room V001</div>
@@ -2840,25 +2840,39 @@
           document.querySelectorAll(".paper-search-hit").forEach((element) => element.classList.remove("paper-search-hit"));
         };
 
+        const paperIdFromElement = (element) => {
+          const idNode = element.matches("b, a") ? element : element.querySelector("b, a");
+          const match = (idNode || element).textContent.match(/(?:^|\D)(\d{4})(?=\D|$)/);
+          return match ? match[1] : "";
+        };
+
+        const findPaperBadge = (paperId) => {
+          for (const container of document.querySelectorAll(".paper-ids")) {
+            for (const child of container.children) {
+              if (paperIdFromElement(child) === paperId) return child;
+            }
+          }
+
+          const idNode = [...document.querySelectorAll(".paper-ids b, .paper-ids a")]
+            .find((element) => paperIdFromElement(element) === paperId);
+          return idNode ? (idNode.closest("span") || idNode) : null;
+        };
+
         form.addEventListener("submit", (event) => {
           event.preventDefault();
           clearPaperSearch();
 
           const paperId = input.value.trim();
           if (!/^\d{4}$/.test(paperId)) {
-            status.textContent = "請輸入 4 位數的 Paper ID。";
+            status.textContent = "Please enter a 4-digit Paper ID.";
             input.focus();
             return;
           }
 
-          const badges = [...document.querySelectorAll(".paper-ids span")];
-          const badge = badges.find((element) => {
-            const id = element.querySelector("b");
-            return id && id.textContent.trim() === paperId;
-          });
+          const badge = findPaperBadge(paperId);
 
           if (!badge) {
-            status.textContent = `找不到 Paper ID ${paperId}。`;
+            status.textContent = `Paper ID ${paperId} was not found.`;
             return;
           }
 
@@ -2871,7 +2885,8 @@
           let tableCell = null;
           const table = details && details.querySelector("table.paper-time-table");
           if (table) {
-            tableCell = [...table.querySelectorAll("tbody td")].find((cell) => cell.textContent.trim() === paperId) || null;
+            tableCell = [...table.querySelectorAll("tbody td")]
+              .find((cell) => paperIdFromElement(cell) === paperId) || null;
             if (tableCell) {
               const columnIndex = tableCell.cellIndex;
               [...tableCell.parentElement.cells].forEach((cell) => cell.classList.add("paper-cross-axis"));
@@ -2891,7 +2906,7 @@
             time && time.textContent.trim(),
             sessionTitle && sessionTitle.textContent.trim()
           ].filter(Boolean);
-          status.textContent = `${resultParts.join(" · ")}。Session 卡片及下方表格十字位置已標示。`;
+          status.textContent = `${resultParts.join(" · ")}. The session card and the corresponding row and column in the schedule have been highlighted.`;
 
           requestAnimationFrame(() => {
             window.setTimeout(() => {
