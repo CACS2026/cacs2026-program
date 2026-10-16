@@ -1403,6 +1403,38 @@
         font-size:14px;
         font-weight:700
       }
+      .business-report-heading{
+        display:block;
+        margin-bottom:8px;
+        color:#174f7c;
+        font-weight:850
+      }
+      .business-report-list{
+        display:grid;
+        gap:9px;
+        margin:0;
+        padding-left:1.4em
+      }
+      .business-report-list li{
+        padding-left:3px;
+        color:#263945;
+        font-weight:750;
+        line-height:1.45
+      }
+      .business-report-speakers{
+        display:block;
+        margin-top:2px;
+        color:var(--muted);
+        font-size:13px;
+        font-weight:600;
+        line-height:1.45
+      }
+      .glance-program-topic .business-report-list{
+        gap:6px
+      }
+      .glance-program-topic .business-report-speakers{
+        font-size:12px
+      }
       .paper-id-search{
         margin:0 0 38px;
         padding:22px 24px;
@@ -1608,7 +1640,7 @@
                 <div class="glance-program-row"><div class="glance-program-time">13:00–14:30</div><div class="glance-program-topic">Sessions Track 5</div><div class="glance-program-venue">Session Rooms (Virtuosi Hall Room V001–V009)</div></div>
                 <div class="glance-program-row"><div class="glance-program-time">14:30–14:50</div><div class="glance-program-topic">Coffee &amp; Tea Break</div><div class="glance-program-venue"></div></div>
                 <div class="glance-program-row"><div class="glance-program-time">14:50–16:05</div><div class="glance-program-topic">Sessions Track 6</div><div class="glance-program-venue">Session Rooms (Virtuosi Hall Room V001–V009)</div></div>
-                <div class="glance-program-row"><div class="glance-program-time">16:05–17:30</div><div class="glance-program-topic">國科會控制學門業務報告 (Prof. Chia-Feng Juang)</div><div class="glance-program-venue">Virtuosi Hall Room V001</div></div>
+                <div class="glance-program-row"><div class="glance-program-time">16:05–17:30</div><div class="glance-program-topic"><span class="business-report-heading">國科會控制學門業務報告</span><ol class="business-report-list"><li>從具身智慧到自主協作：智慧機器人技術發展與台灣的關鍵機會<span class="business-report-speakers">林俊良 講座教授兼國研院副院長</span></li><li>國科會控制學門114成果報告海報頒獎<span class="business-report-speakers">莊家峯 講座教授兼控制學門召集人</span></li><li>國科會控制學門業務報告<span class="business-report-speakers">莊家峯 講座教授兼控制學門召集人<br/>杜青駿 承辦人</span></li></ol></div><div class="glance-program-venue">Virtuosi Hall Room V001</div></div>
                 <div class="glance-program-row"><div class="glance-program-time">17:30–18:20</div><div class="glance-program-topic">Free Shuttle Bus Departure</div><div class="glance-program-venue"></div></div>
                 <div class="glance-program-row"><div class="glance-program-time">18:20–20:30</div><div class="glance-program-topic">Conference Banquet</div><div class="glance-program-venue">Truelove Garden Hotel (臻愛花園飯店第九廳)</div></div>
                 <a class="glance-program-link" href="#oct23">View full program →</a>
@@ -2891,8 +2923,12 @@
             <div class="day-agenda-row">
               <div class="day-agenda-time">16:05–17:30</div>
               <div>
-                <div class="day-agenda-title">國科會控制學門業務報告</div>
-                <div class="day-agenda-detail">Prof. Chia-Feng Juang</div>
+                <div class="day-agenda-title business-report-heading">國科會控制學門業務報告</div>
+                <ol class="business-report-list">
+                  <li>從具身智慧到自主協作：智慧機器人技術發展與台灣的關鍵機會<span class="business-report-speakers">林俊良 講座教授兼國研院副院長</span></li>
+                  <li>國科會控制學門114成果報告海報頒獎<span class="business-report-speakers">莊家峯 講座教授兼控制學門召集人</span></li>
+                  <li>國科會控制學門業務報告<span class="business-report-speakers">莊家峯 講座教授兼控制學門召集人<br/>杜青駿 承辦人</span></li>
+                </ol>
               </div>
               <div class="day-agenda-venue">Virtuosi Hall Room V001</div>
             </div>
