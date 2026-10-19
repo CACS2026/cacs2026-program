@@ -202,6 +202,7 @@ const PAPER_LINKS = {
   "1231": "https://drive.google.com/file/d/1R_TLMSb8UvuHNEWugms_ZVdPDeEpqyPi/view",
   "1232": "https://drive.google.com/file/d/1rHOkDIxTAj1d7zJ5jkyOdVkLpb9bFx8g/view",
   "1233": "https://drive.google.com/file/d/1qap4PDFqYzjcW_XNv2qs7JzK7jM2ugCR/view",
+  "1234": "https://drive.google.com/file/d/1xttncRmtGpcyAiaqPSD7GjS664Dh8Gqm/view",
   "1235": "https://drive.google.com/file/d/1qyqoM5-Z9l6fgxoyPy_a2oegFI0ezytI/view",
   "1236": "https://drive.google.com/file/d/12OTm-hn_fdjlUpziKDw6YQeOGBOIk3KZ/view",
   "1237": "https://drive.google.com/file/d/1jx5UntU7t0rl1RtqFL_5yQ6ABJEftTJL/view",
